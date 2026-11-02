@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src https://api.github.com; img-src 'self' blob:; media-src 'self' blob:">
-<title>Manage Videos</title>
+<title>Manage Samples</title>
 <style>
 :root{--ink:#111;--ground:#F5F3EE;--accent:#FF7A45;--muted:#444;--line:#E4E1D8}
 *{box-sizing:border-box}
@@ -33,7 +33,7 @@ input{width:100%;min-height:44px;padding:10px 12px;font:inherit;font-weight:400;
 </head>
 <body>
 <div class="wrap">
-  <h1>Manage videos</h1>
+  <h1>Manage samples</h1>
 
   <form class="card" id="connect">
     <h2>Connect to GitHub</h2>
@@ -47,9 +47,9 @@ input{width:100%;min-height:44px;padding:10px 12px;font:inherit;font-weight:400;
 
   <div id="manager" hidden>
     <form class="card" id="add">
-      <h2>Add a video</h2>
-      <p class="note">Only add videos and text you're allowed to show. No client names or other brands, except Daiichi Technologies.</p>
-      <label>Video file (MP4 or WebM, up to 50 MB) <input id="file" type="file" accept=".mp4,.webm,video/mp4,video/webm" required></label>
+      <h2>Add a video or image</h2>
+      <p class="note">Only add files and text you're allowed to show. No client names or other brands, except Daiichi Technologies.</p>
+      <label>Video (MP4 or WebM, up to 50 MB) or image (JPG, PNG or WebP, up to 10 MB) <input id="file" type="file" accept=".mp4,.webm,.jpg,.jpeg,.png,.webp,video/mp4,video/webm,image/jpeg,image/png,image/webp" required></label>
       <label>Title <input id="title" required maxlength="80"></label>
       <label>Label (optional) <input id="badge" maxlength="30" placeholder="AI Video Ad"></label>
       <label>Short description (optional) <input id="description" maxlength="120"></label>
@@ -57,7 +57,7 @@ input{width:100%;min-height:44px;padding:10px 12px;font:inherit;font-weight:400;
     </form>
 
     <div class="card">
-      <h2>Videos on your site</h2>
+      <h2>Samples on your site</h2>
       <div id="list"></div>
       <button class="btn btn-accent" id="save" type="button">Save changes</button>
     </div>
@@ -70,6 +70,8 @@ input{width:100%;min-height:44px;padding:10px 12px;font:inherit;font-weight:400;
 var REPO = 'naeemdev8-dev/Naeem';
 var BRANCH = 'main';
 var MAX_BYTES = 50 * 1024 * 1024;
+var MAX_IMAGE_BYTES = 10 * 1024 * 1024;
+var IMAGE_EXT = /\.(jpe?g|png|webp)$/i;
 var token = '';
 var videos = [];
 var $ = function(id){ return document.getElementById(id); };
@@ -200,14 +202,15 @@ function render(){
   list.textContent = '';
   if(!videos.length){
     var empty = document.createElement('p');
-    empty.textContent = 'No videos yet.';
+    empty.textContent = 'No samples yet.';
     list.appendChild(empty);
   }
   videos.forEach(function(item, index){
     var row = document.createElement('div');
     row.className = 'item';
-    var thumb = document.createElement(item.poster ? 'img' : 'div');
-    if(item.poster){ thumb.src = item.poster; thumb.alt = ''; }
+    var thumbSrc = item.poster || (IMAGE_EXT.test(item.file) ? item.file : '');
+    var thumb = document.createElement(thumbSrc ? 'img' : 'div');
+    if(thumbSrc){ thumb.src = thumbSrc; thumb.alt = ''; }
     else thumb.className = 'none';
     var fields = document.createElement('div');
     fields.className = 'fields';
@@ -252,19 +255,19 @@ async function remove(index){
   var deletes = [item.file, item.poster].filter(function(p){ return p && p.indexOf('samples/') === 0; });
   var ok = await publish(function(){
     setStatus('Removing...');
-    return commit('Remove sample video', [listFile(next)], deletes);
+    return commit('Remove sample', [listFile(next)], deletes);
   }, LIVE_SOON);
   if(ok){ videos = next; render(); }
 }
 
 $('save').onclick = function(){
   if(videos.some(function(v){ return !v.title; })){
-    setStatus('Every video needs a title.', true);
+    setStatus('Every sample needs a title.', true);
     return;
   }
   publish(function(){
     setStatus('Saving...');
-    return commit('Update video details', [listFile(videos)]);
+    return commit('Update sample details', [listFile(videos)]);
   }, LIVE_SOON);
 };
 
@@ -272,25 +275,33 @@ $('add').onsubmit = async function(e){
   e.preventDefault();
   var file = $('file').files[0];
   if(!file) return;
-  if(file.size > MAX_BYTES){
-    setStatus('That file is over 50 MB. Please compress it and try again.', true);
+  var imageExt = file.name.match(IMAGE_EXT);
+  if(!imageExt && !/\.(mp4|webm)$/i.test(file.name)){
+    setStatus('Please choose an MP4 or WebM video, or a JPG, PNG or WebP image.', true);
+    return;
+  }
+  if(file.size > (imageExt ? MAX_IMAGE_BYTES : MAX_BYTES)){
+    setStatus('That file is over ' + (imageExt ? '10' : '50') + ' MB. Please compress it and try again.', true);
     return;
   }
   // A generated name keeps the original file name, which may name a client, out of the public repo
   var id = 'sample-' + Date.now();
-  var ext = /\.webm$/i.test(file.name) ? '.webm' : '.mp4';
+  var ext = imageExt ? imageExt[0].toLowerCase() : (/\.webm$/i.test(file.name) ? '.webm' : '.mp4');
   var item = {file: 'samples/' + id + ext, badge: $('badge').value.trim(), title: $('title').value.trim(), description: $('description').value.trim()};
   var ok = await publish(async function(){
-    setStatus('Making thumbnail...');
-    var poster = await makePoster(file);
-    setStatus('Uploading video. Keep this page open...');
+    var poster = null;
+    if(!imageExt){
+      setStatus('Making thumbnail...');
+      poster = await makePoster(file);
+    }
+    setStatus('Uploading. Keep this page open...');
     var adds = [{path: item.file, content: await toBase64(file), encoding: 'base64'}];
     if(poster){
       item.poster = 'samples/' + id + '.jpg';
       adds.push({path: item.poster, content: await toBase64(poster), encoding: 'base64'});
     }
     adds.push(listFile(videos.concat(item)));
-    await commit('Add sample video', adds);
+    await commit('Add sample', adds);
   }, LIVE_SOON);
   if(ok){
     videos.push(item);

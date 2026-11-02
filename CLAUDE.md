@@ -20,10 +20,10 @@ Follow these on every update.
 4. Confirm every `src`, `poster`, `file` and `poster` path in `index.html` and `videos.json` points to a tracked file, using a relative path and matching upper and lower case. GitHub Pages is case-sensitive and serves from `/Naeem/`.
 5. `.gitignore` allows only `videos/daiichi-technologies.*` from `videos/`. Do not widen it or force-add other media from there without the owner's approval.
 
-## Video uploads
+## Sample uploads
 
-1. New videos go in `samples/` with generated names (`sample-<timestamp>`), because original file names may name a client. `admin.html` does this, so keep it if you change that page.
-2. Commit messages from `admin.html` stay generic and never include video titles.
+1. New videos and images go in `samples/` with generated names (`sample-<timestamp>`), because original file names may name a client. `admin.html` does this, so keep it if you change that page.
+2. Commit messages from `admin.html` stay generic and never include sample titles.
 3. `admin.html` holds no credentials. The owner's token stays in their browser. Never commit a token, and do not add third-party scripts or styles to that page.
 
 ## Publishing

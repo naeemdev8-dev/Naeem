@@ -81,7 +81,8 @@ nav .btn{min-height:44px;padding:10px 20px}
 @media(max-width:900px){.reels{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.reels{gap:12px}.reel .t{font-size:15px}}
 .reel{background:#fff;border-radius:20px;padding:10px;border:1.5px solid var(--line);display:flex;flex-direction:column;gap:10px}
-.reel video{width:100%;aspect-ratio:9/16;border-radius:14px;background:#000;object-fit:cover;display:block}
+.reel video,.reel img{width:100%;aspect-ratio:9/16;border-radius:14px;background:#000;object-fit:cover;display:block}
+.reel img{object-fit:contain}
 .reel .meta{padding:2px 6px 8px;display:flex;flex-direction:column;gap:6px}
 .reel .badge{align-self:flex-start;font-size:12px;font-weight:600;background:var(--accent);padding:3px 10px;border-radius:999px}
 .reel .t{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:17px;line-height:1.25}
@@ -126,7 +127,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <nav aria-label="Main">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
-      <a href="#portfolio">Videos</a>
+      <a href="#portfolio">Samples</a>
       <a href="#process">AI Workflow</a>
       <a class="btn btn-dark" href="#contact">Hire Me</a>
     </nav>
@@ -203,8 +204,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <section id="portfolio">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Video portfolio</span>
-      <h2>Videos I've created</h2>
+      <span class="eyebrow">Portfolio</span>
+      <h2>Samples of my work</h2>
       <p>Tap any video to play.</p>
     </div>
     <div class="reels" id="reels">
@@ -276,7 +277,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <footer>
   <div class="wrap">
     <div>© 2026 Naeem Ashraf · Social Media Manager</div>
-    <div>Content Strategy · AI Video · Meta Ads</div>
+    <div>Content Strategy · AI Video · Meta Ads · <a href="admin.html" rel="nofollow">Manage samples</a></div>
   </div>
 </footer>
 
@@ -299,18 +300,26 @@ fetch('videos.json?t=' + Date.now()).then(function(r){ return r.json(); }).then(
   list.forEach(function(item){
     var reel = document.createElement('div');
     reel.className = 'reel';
-    var v = document.createElement('video');
-    v.src = item.file;
-    if(item.poster) v.poster = item.poster;
-    v.controls = true;
-    v.playsInline = true;
-    v.preload = item.poster ? 'none' : 'metadata';
+    var media;
+    if(/\.(jpe?g|png|webp)$/i.test(item.file)){
+      media = document.createElement('img');
+      media.src = item.file;
+      media.alt = item.title;
+      media.loading = 'lazy';
+    } else {
+      media = document.createElement('video');
+      media.src = item.file;
+      if(item.poster) media.poster = item.poster;
+      media.controls = true;
+      media.playsInline = true;
+      media.preload = item.poster ? 'none' : 'metadata';
+    }
     var meta = document.createElement('div');
     meta.className = 'meta';
     if(item.badge) meta.appendChild(span('badge', item.badge));
     meta.appendChild(span('t', item.title));
     if(item.description) meta.appendChild(span('d', item.description));
-    reel.appendChild(v);
+    reel.appendChild(media);
     reel.appendChild(meta);
     grid.appendChild(reel);
   });
