@@ -15,7 +15,7 @@ These apply to every update.
 
 ## Add or change samples
 
-Open https://naeemdev8-dev.github.io/Naeem/admin.html (or click **Manage samples** at the bottom of the site), paste your GitHub access token, and add, edit, reorder or remove samples. Changes appear on the site within a few minutes.
+Click **+ Add video or image** above the samples on the site. It only shows in a browser where you've connected your token. On a new device, click **Manage samples** at the bottom of the site, or go to https://naeemdev8-dev.github.io/Naeem/admin.html. Then paste your GitHub access token if asked, and add, edit, reorder or remove samples. Changes appear on the site within a few minutes.
 
 - Videos: MP4 or WebM, up to 50 MB each. Vertical (9:16) fits best.
 - Images: JPG, PNG or WebP, up to 10 MB each.

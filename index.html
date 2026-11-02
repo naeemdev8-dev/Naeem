@@ -96,6 +96,8 @@ nav .btn{min-height:44px;padding:10px 20px}
 .work li{margin:4px 0}
 
 /* portfolio */
+.edit-samples{margin-bottom:24px}
+.edit-samples[hidden]{display:none}
 .reels{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:900px){.reels{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.reels{gap:12px}.reel .t{font-size:15px}}
@@ -192,6 +194,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <h2>Samples of my work</h2>
       <p>Tap any video to play.</p>
     </div>
+    <a class="btn btn-accent edit-samples" id="edit-samples" href="admin.html" rel="nofollow" hidden>+ Add video or image</a>
     <div class="reels" id="reels">
       <div class="reel">
         <video src="videos/daiichi-technologies.mp4" poster="videos/daiichi-technologies.jpg" controls playsinline preload="none"></video>
@@ -312,6 +315,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 document.addEventListener('play', function(e){
   document.querySelectorAll('video').forEach(function(o){ if(o!==e.target) o.pause(); });
 }, true);
+
+// The edit button only shows in the owner's browser, which holds the upload token.
+// Adding #edit to the address shows it on another device. The upload page still needs the token
+var hasToken = false;
+try { hasToken = !!localStorage.getItem('gh-token'); } catch(e){}
+if(hasToken || location.hash === '#edit') document.getElementById('edit-samples').hidden = false;
 
 // Build the video grid from videos.json (the reel in the HTML stays if it can't load)
 function span(cls, text){
