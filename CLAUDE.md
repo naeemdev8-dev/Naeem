@@ -12,6 +12,13 @@ Follow these on every update.
 4. **Nothing invented.** Do not write or add reviews, star ratings, results, numbers or client names unless the owner supplies them and approves them.
 5. **Rules 1 and 2 cover everything public**, not just visible text: page text, captions, `<title>`, meta and `og:` tags, `aria-label`s, alt text, file names, commit messages, and this file and `README.md`. Do not name removed clients here, even to ban them.
 
+## Design
+
+The site uses the approved Dark Showreel look: near-black with one gold accent. The hero has a muted video loop, a rotating headline and floating reactions, and the AI Workflow section has an animated robot.
+
+1. Animations must switch off under `prefers-reduced-motion`, and visitors in that mode must still get the full text.
+2. Animations must not show like counts, view counts or other numbers, because of rule 4 above.
+
 ## Before every commit
 
 1. Run `git pull`. Uploads from `admin.html` commit directly to `main`, so the local copy may be behind.

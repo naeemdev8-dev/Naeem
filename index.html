@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Naeem Ashraf — Social Media Manager | Content Strategy, AI Video &amp; Meta Ads</title>
 <meta name="description" content="Naeem Ashraf — Social Media Manager. Content strategy, AI video generation, video editing and Meta Ads campaigns for Daiichi Technologies.">
+<meta name="theme-color" content="#0B0B0C">
 <meta property="og:title" content="Naeem Ashraf — Social Media Manager">
 <meta property="og:description" content="Content strategy, AI videos and ad campaigns that grow businesses.">
 <meta property="og:image" content="videos/daiichi-technologies.jpg">
@@ -12,131 +13,167 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111;--ground:#F5F3EE;--accent:#FF7A45;--muted:#444;--line:#E4E1D8}
+:root{color-scheme:dark;--bg:#0B0B0C;--panel:#151517;--line:#2C2C30;--text:#F4F1EA;--muted:#B8B4AB;--accent:#F2B544;--on-accent:#111}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--ground);line-height:1.6}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
 a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;margin:0;line-height:1.1}
 .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5A5A5A}
-.dark .eyebrow{color:var(--accent)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--ink)}
-.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--ink)}
-.btn-dark{background:var(--ink);color:#fff}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--text)}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-light{background:var(--text);border-color:var(--text);color:var(--on-accent)}
 .btn-ghost{background:transparent}
-.btn:hover{filter:brightness(.95)}
+.btn:hover{filter:brightness(.92)}
 section{padding:88px 0;scroll-margin-top:72px}
-.dark{background:var(--ink);color:#fff}
-.white{background:#fff}
+.panel{background:var(--panel)}
 .head{display:flex;flex-direction:column;gap:12px;max-width:760px;margin-bottom:40px}
 .head h2{font-size:clamp(2rem,4vw,2.75rem)}
 .head p{margin:0;font-size:17px;color:var(--muted)}
-.dark .head p{color:#D6D6D6}
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
 .solo{max-width:520px}
-.card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.card{background:var(--panel);border:1.5px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px}
 .card p{margin:0;color:var(--muted)}
-.num{width:44px;height:44px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700}
 
 /* header */
-header{position:sticky;top:0;z-index:10;background:rgba(245,243,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:10;background:rgba(11,11,12,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
 .logo{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:22px;text-decoration:none}
 nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-weight:500;font-size:15px}
 nav a{text-decoration:none}
+nav a:not(.btn):hover{color:var(--accent)}
 nav .btn{min-height:44px;padding:10px 20px}
 @media(max-width:760px){nav a:not(.btn){display:none}}
 
 /* hero */
-.hero{padding:64px 0 80px}
+.hero{padding:64px 0 80px;overflow:clip}
 .hero .wrap{display:flex;flex-wrap:wrap;gap:56px;align-items:center}
 .hero-text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:24px}
-.pill{align-self:flex-start;padding:8px 14px;border:1.5px solid var(--ink);border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.hero h1{font-size:clamp(2.6rem,6vw,4.2rem);letter-spacing:-.02em;line-height:1.2}
-.hl{background:var(--accent);padding:0 10px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.hero p{margin:0;font-size:19px;color:#3A3A3A;max-width:560px}
-.ctas{display:flex;flex-wrap:wrap;gap:14px}
-.hero-video{flex:0 1 340px;min-width:0;margin:0 auto}
-.phone{background:var(--ink);border-radius:32px;padding:10px;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
-.phone video{display:block;width:100%;aspect-ratio:9/16;border-radius:24px;background:#000;object-fit:cover}
-.caption{text-align:center;font-size:14px;color:#5A5A5A;margin-top:12px}
-
 .me{display:flex;align-items:center;gap:16px}
 .me img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none}
 .me strong{display:block;font-family:"Space Grotesk",system-ui,sans-serif;font-size:20px;line-height:1.2}
-.me small{font-size:14px;color:#5A5A5A}
+.me small{font-size:14px;color:var(--muted)}
+.pill{align-self:flex-start;padding:8px 14px;border:1.5px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.2rem);letter-spacing:-.02em;line-height:1.2}
+.hl{background:var(--accent);color:var(--on-accent);padding:0 10px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.rotates .line{display:block}
+.rotates .hl{display:inline-block;font-size:min(1em,8.4vw);white-space:nowrap;transition:opacity .25s,transform .25s}
+.rotates .hl.out{opacity:0;transform:translateY(-12px)}
+.rotates .hl.in{opacity:0;transform:translateY(12px);transition:none}
+.hero p{margin:0;font-size:19px;color:var(--muted);max-width:560px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-video{flex:0 1 360px;min-width:0;margin:0 auto}
+.phone{position:relative;background:#000;border:1.5px solid var(--line);border-radius:32px;padding:10px;box-shadow:0 0 90px -20px rgba(242,181,68,.4)}
+.reactions{position:absolute;right:-18px;bottom:16%;width:40px;height:0;pointer-events:none}
+.reaction{position:absolute;left:0;bottom:0;width:40px;height:40px;border-radius:50%;background:var(--panel);border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;animation:float-up 3.6s ease-out forwards}
+@keyframes float-up{
+  0%{opacity:0;transform:translate(0,0) scale(.6)}
+  12%{opacity:1;transform:translate(0,-36px) scale(1)}
+  50%{transform:translate(var(--sway),-170px) scale(1)}
+  80%{opacity:.85}
+  100%{opacity:0;transform:translate(calc(var(--sway) * -1),-340px) scale(.9)}
+}
+.phone video{display:block;width:100%;aspect-ratio:9/16;border-radius:24px;background:#000;object-fit:cover}
+.caption{text-align:center;font-size:14px;color:var(--muted);margin-top:12px}
+
+/* brand strip */
+.strip{padding:28px 0;border-block:1px solid var(--line)}
+.strip .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+.strip .label{font-size:14px;color:var(--muted)}
+.strip .brand{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,26px)}
+
+/* showreel */
+.edit-samples{margin-bottom:24px}
+.edit-samples[hidden]{display:none}
+.reels{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;margin-inline:-24px;padding:4px 24px 16px;scroll-padding-inline:24px;scrollbar-color:var(--line) transparent}
+.reel{flex:0 0 clamp(250px,27vw,340px);scroll-snap-align:start;background:var(--panel);border-radius:20px;padding:10px;border:1.5px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.reel:hover{border-color:var(--accent)}
+.reel video,.reel img{width:100%;aspect-ratio:9/16;border-radius:14px;background:#000;object-fit:contain;display:block}
+.reel .meta{padding:2px 6px 8px;display:flex;flex-direction:column;gap:6px}
+.reel .badge{align-self:flex-start;font-size:12px;font-weight:600;background:var(--accent);color:var(--on-accent);padding:3px 10px;border-radius:999px}
+.reel .t{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:17px;line-height:1.25}
+.reel .d{font-size:14px;color:var(--muted)}
 
 /* services */
-.svcs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.svc{display:flex;align-items:center;gap:14px;padding:16px;border:1.5px solid var(--line);border-radius:16px}
-.svc .num{flex:none}
+.svcs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.svc{display:flex;align-items:center;gap:14px;padding:16px;background:var(--bg);border:1.5px solid var(--line);border-radius:16px}
+.num{flex:none;width:44px;height:44px;border-radius:12px;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700}
 .svc h3{font-size:18px}
 .svc p{margin:4px 0 0;font-size:14px;color:var(--muted)}
 
-/* floating WhatsApp button on phones */
-.wa-float{display:none}
-@media(max-width:760px){
-  .wa-float{display:inline-flex;align-items:center;gap:8px;position:fixed;right:16px;bottom:16px;z-index:20;min-height:52px;padding:12px 20px;border-radius:999px;background:#25D366;color:var(--ink);font-weight:600;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-  footer{padding-bottom:88px}
-}
-
-/* brands strip */
-.strip{padding:36px 0}
-.strip .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:16px 40px}
-.strip .label{font-size:14px;color:#BDBDBD}
-.strip .brand{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,26px)}
-.strip .dot{color:var(--accent)}
-
 /* work */
-.work{background:#fff}
-.work .tag{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5A5A5A}
+.work .tag{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .work h3{font-size:26px}
 .work ul{margin:4px 0 0;padding-left:20px;color:var(--muted)}
 .work li{margin:4px 0}
 
-/* portfolio */
-.edit-samples{margin-bottom:24px}
-.edit-samples[hidden]{display:none}
-.reels{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}
-@media(max-width:900px){.reels{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:480px){.reels{gap:12px}.reel .t{font-size:15px}}
-.reel{background:#fff;border-radius:20px;padding:10px;border:1.5px solid var(--line);display:flex;flex-direction:column;gap:10px}
-.reel video,.reel img{width:100%;aspect-ratio:9/16;border-radius:14px;background:#000;object-fit:contain;display:block}
-.reel .meta{padding:2px 6px 8px;display:flex;flex-direction:column;gap:6px}
-.reel .badge{align-self:flex-start;font-size:12px;font-weight:600;background:var(--accent);padding:3px 10px;border-radius:999px}
-.reel .t{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:17px;line-height:1.25}
-.reel .d{font-size:14px;color:var(--muted)}
+/* robot */
+.process-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 48px;margin-bottom:40px}
+.process-top .head{flex:1 1 420px;min-width:0;margin-bottom:0}
+.bot{flex:0 1 320px;width:100%;max-width:320px;height:auto;margin-inline:auto;display:block}
+.bot-body{fill:#EDE9DF}
+.bot-shade{fill:#BDB8AB}
+.bot-dark{fill:#0B0B0C}
+.bot-gold{fill:var(--accent)}
+.bot-arm{fill:none;stroke:#EDE9DF;stroke-width:13;stroke-linecap:round;stroke-linejoin:round;transform-origin:118px 142px}
+.bot-arm-back{stroke:#BDB8AB}
+.bot-head{animation:bot-bob 3s ease-in-out infinite}
+.bot-eye{transform-box:fill-box;transform-origin:center;animation:bot-blink 4.5s infinite}
+.bot-light{animation:bot-pulse 1.8s ease-in-out infinite}
+.bot-arm-front{animation:bot-type .36s ease-in-out infinite alternate}
+.bot-arm-back{animation:bot-type .36s ease-in-out -.18s infinite alternate}
+.bot-line{transform-box:fill-box;transform-origin:left center;animation:bot-write 4s ease-in-out infinite}
+.bot-line-2{animation-delay:.5s}
+.bot-play{transform-box:fill-box;transform-origin:center;animation:bot-play 2s ease-in-out infinite}
+@keyframes bot-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+@keyframes bot-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes bot-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes bot-type{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
+@keyframes bot-write{0%{transform:scaleX(0)}45%,85%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes bot-play{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@media(prefers-reduced-motion:reduce){.bot *{animation:none!important}}
 
 /* process */
 .steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
-.step{border:1.5px solid #3A3A3A;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.step{background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px}
 .step b{font-family:"Space Grotesk",system-ui,sans-serif;font-size:30px;color:var(--accent)}
 .step h3{font-size:19px}
-.step p{margin:0;font-size:14px;color:#CFCFCF}
+.step p{margin:0;font-size:14px;color:var(--muted)}
 .tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
-.tools span{border:1.5px solid #4A4A4A;border-radius:999px;padding:9px 18px;font-size:15px}
+.tools span{border:1.5px solid var(--line);border-radius:999px;padding:9px 18px;font-size:15px}
 
 /* clients */
 .client-card .who{display:flex;align-items:center;gap:14px}
-.avatar{width:52px;height:52px;border-radius:999px;background:var(--ink);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:18px;flex:none}
+.avatar{width:52px;height:52px;border-radius:999px;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:18px;flex:none}
 .client-card h3{font-size:20px}
 .client-card .co{font-size:14px;color:var(--muted)}
-.stars{color:#B4530A;font-size:18px;letter-spacing:2px}
+.stars{color:var(--accent);font-size:18px;letter-spacing:2px}
 
 /* contact */
-.cta-box{background:var(--accent);border-radius:28px;padding:clamp(28px,5vw,56px);display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.cta-box{background:var(--accent);color:var(--on-accent);border-radius:28px;padding:clamp(28px,5vw,56px);display:flex;flex-wrap:wrap;gap:40px;align-items:center}
 .cta-box .l{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:18px}
 .cta-box h2{font-size:clamp(2.2rem,4.5vw,3rem)}
 .cta-box p{margin:0;font-size:18px}
-.contact{flex:1 1 340px;min-width:0;background:#fff;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.cta-box .btn{background:var(--on-accent);border-color:var(--on-accent);color:var(--text)}
+.contact{flex:1 1 340px;min-width:0;background:var(--bg);color:var(--text);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px}
 .contact a.row{display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px;border:1.5px solid var(--line);border-radius:14px;min-height:56px}
-.contact a.row:hover{border-color:var(--ink)}
-.contact .ic{width:40px;height:40px;border-radius:10px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
-.contact small{display:block;font-size:13px;color:#5A5A5A}
+.contact a.row:hover{border-color:var(--accent)}
+.contact .ic{width:40px;height:40px;border-radius:10px;background:var(--panel);display:flex;align-items:center;justify-content:center;flex:none}
+.contact small{display:block;font-size:13px;color:var(--muted)}
 .contact strong{font-size:16px;word-break:break-all}
-footer{padding:0 0 40px;font-size:14px;color:#5A5A5A}
+footer{padding:0 0 40px;font-size:14px;color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* floating WhatsApp button on phones */
+.wa-float{display:none}
+@media(max-width:760px){
+  .wa-float{display:inline-flex;align-items:center;gap:8px;position:fixed;right:16px;bottom:16px;z-index:20;min-height:52px;padding:12px 20px;border-radius:999px;background:#25D366;color:#111;font-weight:600;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+  footer{padding-bottom:88px}
+  .reel{flex-basis:72vw}
+}
 </style>
 </head>
 <body>
@@ -149,7 +186,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#process">AI Workflow</a>
-      <a class="btn btn-dark" href="#contact">Hire Me</a>
+      <a class="btn btn-light" href="#contact">Hire Me</a>
     </nav>
   </div>
 </header>
@@ -164,23 +201,24 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div><strong>Naeem Ashraf</strong><small>Social Media Manager</small></div>
       </div>
       <span class="pill">Social Media Manager · AI Video Creator · Meta Ads</span>
-      <h1>I grow businesses with <span class="hl">content strategy, AI videos</span> and ad campaigns.</h1>
+      <h1 id="headline">I grow businesses with <span class="line"><span class="hl" id="rotator">content strategy, AI videos</span><span id="headline-end"> and ad campaigns.</span></span></h1>
       <p>I'm Naeem Ashraf. I plan the content strategy, create AI-generated videos, edit them, manage the pages and run the campaigns. One person, start to finish.</p>
       <div class="ctas">
         <a class="btn btn-accent" href="https://wa.me/923040695800?text=Hi%20Naeem%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20social%20media%20work." target="_blank" rel="noopener">Message me on WhatsApp</a>
-        <a class="btn btn-ghost" href="#portfolio">Watch my videos</a>
+        <a class="btn btn-ghost" href="#portfolio">Watch my samples</a>
       </div>
     </div>
     <div class="hero-video">
       <div class="phone">
-        <video src="videos/daiichi-technologies.mp4" poster="videos/daiichi-technologies.jpg" controls playsinline preload="none"></video>
+        <video id="hero-video" src="videos/daiichi-technologies.mp4" poster="videos/daiichi-technologies.jpg" controls muted loop playsinline preload="none"></video>
+        <div class="reactions" id="reactions" aria-hidden="true"></div>
       </div>
       <div class="caption">AI presenter video for Daiichi Technologies</div>
     </div>
   </div>
 </section>
 
-<section class="dark strip" aria-label="Brand managed">
+<section class="strip panel" aria-label="Brand managed">
   <div class="wrap">
     <span class="label">Brand I manage</span>
     <span class="brand">Daiichi Technologies</span>
@@ -190,12 +228,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <section id="portfolio">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Portfolio</span>
+      <span class="eyebrow">Showreel</span>
       <h2>Samples of my work</h2>
-      <p>Tap any video to play.</p>
+      <p>Tap any video to play. Swipe to see more.</p>
     </div>
     <a class="btn btn-accent edit-samples" id="edit-samples" href="admin.html" rel="nofollow" hidden>+ Add video or image</a>
-    <div class="reels" id="reels">
+    <div class="reels" id="reels" tabindex="0" aria-label="Work samples">
       <div class="reel">
         <video src="videos/daiichi-technologies.mp4" poster="videos/daiichi-technologies.jpg" controls playsinline preload="none"></video>
         <div class="meta"><span class="badge">AI Presenter</span><span class="t">Daiichi Technologies</span><span class="d">Tech services video series</span></div>
@@ -204,7 +242,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </section>
 
-<section id="services" class="white">
+<section id="services" class="panel">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">What I do</span>
@@ -241,12 +279,40 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </section>
 
-<section id="process" class="dark">
+<section id="process" class="panel">
   <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">AI-powered workflow</span>
-      <h2>How I create faster without losing quality</h2>
-      <p>AI handles the heavy lifting. I bring the strategy and the final edit.</p>
+    <div class="process-top">
+      <div class="head">
+        <span class="eyebrow">AI-powered workflow</span>
+        <h2>How I create faster without losing quality</h2>
+        <p>AI handles the heavy lifting. I bring the strategy and the final edit.</p>
+      </div>
+      <svg class="bot" viewBox="0 0 340 230" role="img" aria-label="A robot working on a laptop">
+        <rect x="20" y="206" width="300" height="8" rx="4" fill="#3A3A3F"/>
+        <g transform="translate(214 198) skewX(-11.800)">
+          <rect x="0" y="-86" width="88" height="86" rx="7" class="bot-dark" stroke="#F2B544" stroke-width="3"/>
+          <rect x="11" y="-75" width="44" height="6" rx="3" class="bot-gold bot-line"/>
+          <rect x="11" y="-62" width="66" height="30" rx="5" fill="#2C2C30"/>
+          <path d="m38-55 15 8-15 8z" class="bot-gold bot-play"/>
+          <rect x="11" y="-24" width="58" height="5" rx="2.500" fill="#B8B4AB" class="bot-line bot-line-2"/>
+        </g>
+        <rect x="198" y="197" width="108" height="9" rx="4.500" class="bot-shade"/>
+        <path d="M118 142 L150 178 L212 190" class="bot-arm bot-arm-back"/>
+        <rect x="70" y="122" width="84" height="84" rx="18" class="bot-body"/>
+        <circle cx="112" cy="162" r="11" class="bot-dark"/>
+        <circle cx="112" cy="162" r="5" class="bot-gold bot-light"/>
+        <rect x="102" y="104" width="20" height="22" class="bot-shade"/>
+        <g class="bot-head">
+          <path d="M114 44V24" stroke="#EDE9DF" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="114" cy="19" r="7" class="bot-gold bot-light"/>
+          <rect x="66" y="44" width="96" height="64" rx="20" class="bot-body"/>
+          <rect x="58" y="62" width="10" height="28" rx="5" class="bot-shade"/>
+          <rect x="94" y="58" width="60" height="32" rx="14" class="bot-dark"/>
+          <circle cx="114" cy="74" r="6" class="bot-gold bot-eye"/>
+          <circle cx="136" cy="74" r="6" class="bot-gold bot-eye"/>
+        </g>
+        <path d="M118 142 L146 184 L200 192" class="bot-arm bot-arm-front"/>
+      </svg>
     </div>
     <div class="steps">
       <div class="step"><b>01</b><h3>Research</h3><p>Market, competitor and audience research with ChatGPT &amp; Claude.</p></div>
@@ -280,15 +346,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="l">
         <h2>Let's grow your business together.</h2>
         <p>Send me a message on WhatsApp or email. I'll look at your page and tell you how I'd grow it with content, AI video and ads.</p>
-        <div class="ctas"><a class="btn btn-dark" href="https://wa.me/923040695800?text=Hi%20Naeem%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20social%20media%20work." target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+        <div class="ctas"><a class="btn" href="https://wa.me/923040695800?text=Hi%20Naeem%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20social%20media%20work." target="_blank" rel="noopener">Chat on WhatsApp</a></div>
       </div>
       <div class="contact">
         <a class="row" href="https://wa.me/923040695800" target="_blank" rel="noopener">
-          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
           <span><small>WhatsApp</small><strong>0304 0695800</strong></span>
         </a>
         <a class="row" href="mailto:naeemdev8@gmail.com">
-          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
           <span><small>Email</small><strong>naeemdev8@gmail.com</strong></span>
         </a>
       </div>
@@ -315,6 +381,62 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 document.addEventListener('play', function(e){
   document.querySelectorAll('video').forEach(function(o){ if(o!==e.target) o.pause(); });
 }, true);
+
+// Hero motion: silent video loop, rotating headline and floating reactions.
+// All of it stays off if the visitor prefers less motion
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var heroPlay = document.getElementById('hero-video').play();
+  if(heroPlay) heroPlay.catch(function(){});
+
+  // The animations only run while the hero is on screen
+  var heroVisible = true;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      heroVisible = entries[0].isIntersecting;
+    }).observe(document.querySelector('.hero'));
+  }
+  function heroActive(){ return heroVisible && !document.hidden; }
+
+  var headline = document.getElementById('headline');
+  var rotator = document.getElementById('rotator');
+  var words = ['content strategy', 'AI videos', 'ad campaigns'];
+  var wordIndex = 0;
+  headline.setAttribute('aria-label', headline.textContent);
+  headline.classList.add('rotates');
+  rotator.textContent = words[0];
+  document.getElementById('headline-end').textContent = '.';
+  setInterval(function(){
+    if(!heroActive()) return;
+    rotator.classList.add('out');
+    setTimeout(function(){
+      wordIndex = (wordIndex + 1) % words.length;
+      rotator.textContent = words[wordIndex];
+      rotator.classList.remove('out');
+      rotator.classList.add('in');
+      void rotator.offsetWidth;
+      rotator.classList.remove('in');
+    }, 250);
+  }, 2400);
+
+  var reactions = document.getElementById('reactions');
+  var icons = [
+    '<path d="M12 20s-7.5-4.6-9.2-9.2C1.700 7.700 3.700 4.500 7 4.500c2 0 3.700 1.100 5 3 1.300-1.900 3-3 5-3 3.300 0 5.300 3.200 4.200 6.300C19.500 15.400 12 20 12 20z"/>',
+    '<path d="M7 11v9H4v-9h3zm0 0 4-7c1.700 0 2.800 1.100 2.800 2.800V10h4.900c1.300 0 2.200 1.200 1.900 2.400l-1.500 6c-.2.9-1 1.600-2 1.600H7"/>',
+    '<path d="M21 11.500a8.400 8.400 0 0 1-12.600 7.300L3 20l1.300-5.200A8.400 8.400 0 1 1 21 11.500z"/>',
+    '<path d="m8 5 11 7-11 7V5z"/>'
+  ];
+  var iconIndex = 0;
+  setInterval(function(){
+    if(!heroActive()) return;
+    var bubble = document.createElement('span');
+    bubble.className = 'reaction';
+    bubble.style.setProperty('--sway', (Math.random() * 20 - 10) + 'px');
+    bubble.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + icons[iconIndex] + '</svg>';
+    iconIndex = (iconIndex + 1) % icons.length;
+    bubble.addEventListener('animationend', function(){ bubble.remove(); });
+    reactions.appendChild(bubble);
+  }, 1100);
+}
 
 // The edit button only shows in the owner's browser, which holds the upload token.
 // Adding #edit to the address shows it on another device. The upload page still needs the token
