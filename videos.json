@@ -5,5 +5,12 @@
     "badge": "AI Presenter",
     "title": "Daiichi Technologies",
     "description": "Tech services video series"
+  },
+  {
+    "file": "samples/sample-1793640855384.mp4",
+    "badge": "",
+    "title": "Daiichi Services",
+    "description": "",
+    "poster": "samples/sample-1793640855384.jpg"
   }
 ]
