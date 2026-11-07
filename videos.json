@@ -1,12 +1,5 @@
 [
   {
-    "file": "videos/daiichi-technologies.mp4",
-    "poster": "videos/daiichi-technologies.jpg",
-    "badge": "AI Presenter",
-    "title": "Daiichi Technologies",
-    "description": "Tech services video series"
-  },
-  {
     "file": "samples/sample-1793640855384.mp4",
     "badge": "",
     "title": "Daiichi Services",
