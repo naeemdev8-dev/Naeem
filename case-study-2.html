@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case Study 2: Lowest-CPM Messenger Campaign, 29 Conversations | Naeem Ashraf</title>
-<meta name="description" content="Meta Ads case study: 29 Messenger conversations at Rs30.56 each for Daiichi Technologies, with the lowest CPM on the account (Rs233).">
+<title>Case Study 2: 29 Messenger Conversations at Rs30.56 | Naeem Ashraf</title>
+<meta name="description" content="Meta Ads case study: 29 Messenger conversations at Rs30.56 each for Daiichi Technologies, with a CPM of about Rs233.">
 <meta name="theme-color" content="#0B0B0C">
-<meta property="og:title" content="Case Study 2: Lowest CPM on the account, 29 conversations at Rs30.56">
-<meta property="og:description" content="A three-day Meta Ads campaign for Daiichi Technologies by Naeem Ashraf.">
+<meta property="og:title" content="Case Study 2: 29 Messenger conversations at Rs30.56 each">
+<meta property="og:description" content="A low-budget follow-up Meta Ads campaign for Daiichi Technologies by Naeem Ashraf.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#0B0B0C;--panel:#151517;--panel2:#1D1D20;--line:#2C2C30;--text:#F4F1EA;--muted:#B8B4AB;--accent:#F2B544;--on-accent:#111;--good:#86D99B;--bad:#F29B8B}
+:root{color-scheme:dark;--bg:#0B0B0C;--panel:#151517;--panel2:#1D1D20;--line:#2C2C30;--text:#F4F1EA;--muted:#B8B4AB;--accent:#F2B544;--on-accent:#111;--good:#86D99B}
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
 a{color:inherit}
@@ -48,30 +48,18 @@ h1{font-size:clamp(2.1rem,5vw,3.4rem);letter-spacing:-.02em;margin-bottom:18px}
 .card .k{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .card ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
 .card li{margin-bottom:6px}
-.chart{background:var(--panel);border:1.5px solid var(--line);border-radius:18px;padding:26px}
-.bar{display:grid;grid-template-columns:200px 1fr 70px;align-items:center;gap:14px;margin:14px 0}
-.bar .name{font-size:14px}
-.bar .name small{display:block;color:var(--muted);font-size:12px}
-.track{background:var(--panel2);border-radius:8px;height:26px;overflow:hidden}
-.fill{height:100%;border-radius:8px;background:#55545A}
-.fill.win{background:var(--accent)}
-.bar .val{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
 .note{font-size:13px;color:var(--muted);margin-top:14px}
 .pills{display:flex;flex-wrap:wrap;gap:10px}
 .pill{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px}
 .pill i{width:8px;height:8px;border-radius:50%;background:var(--good)}
 .pill.avg i{background:#8A877F}
-.tablewrap{overflow-x:auto;border:1.5px solid var(--line);border-radius:16px}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:880px}
-th,td{padding:13px 11px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
-th{background:var(--panel2);color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
-td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
-tr:last-child td{border-bottom:none}
-tr.win td{background:rgba(242,181,68,.1)}
-td small{color:var(--muted)}
-.q{font-size:12px;padding:3px 9px;border-radius:999px;display:inline-block;background:var(--panel2);color:var(--muted)}
-.q.g{color:var(--good)}
-.q.b{color:var(--bad)}
+.funnel{background:var(--panel);border:1.5px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.stage{border-radius:12px;padding:16px 20px;text-align:center;background:var(--panel2);border:1.5px solid var(--line)}
+.stage .v{font-family:"Space Grotesk",system-ui,sans-serif;font-size:26px;font-weight:700}
+.stage .l{font-size:13px;color:var(--muted)}
+.stage.end{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.stage.end .l{color:var(--on-accent)}
+.arrow-note{font-size:13px;color:var(--accent);text-align:center}
 .learn{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}
 .learn div{background:var(--panel);border:1.5px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:20px}
 .learn h3{font-size:17px;margin-bottom:8px}
@@ -86,7 +74,7 @@ td small{color:var(--muted)}
 .pager small{display:block;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .pager b{font-family:"Space Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.3}
 .pager .arrow{color:var(--accent);font-weight:700;flex:none}
-@media(max-width:640px){.bar{grid-template-columns:1fr 70px}.bar .name{grid-column:1/-1}.wrap{padding:0 16px}main{padding-top:40px}}
+@media(max-width:640px){.wrap{padding:0 16px}main{padding-top:40px}.funnel{padding:18px}.stage{width:100%!important}}
 </style>
 </head>
 <body>
@@ -101,9 +89,9 @@ td small{color:var(--muted)}
 <main>
   <div class="wrap">
 
-    <span class="tag">Case Study 2 · Meta Ads · Lead Generation</span>
-    <h1>Lowest CPM on the account: <span class="hl">29 conversations at Rs30.56</span></h1>
-    <p class="lead">A three-day Messenger campaign for Daiichi Technologies. It had the cheapest delivery on the whole ad account, at Rs233 per 1,000 impressions, and above-average quality and engagement rankings from Meta.</p>
+    <span class="tag">Case Study 2 · Meta Ads · Messenger Campaign</span>
+    <h1>29 Messenger conversations at <span class="hl">Rs30.56 each</span></h1>
+    <p class="lead">A short follow-up Facebook campaign for Daiichi Technologies that kept Messenger conversations coming in at a low cost, with an efficient CPM of about Rs233.</p>
     <div class="meta">
       <div>Client: <b>Daiichi Technologies</b></div>
       <div>Role: <b>Naeem Ashraf, Social Media Manager</b></div>
@@ -115,18 +103,18 @@ td small{color:var(--muted)}
     <div class="kpis">
       <div class="kpi key"><div class="v">29</div><div class="l">Messenger conversations</div></div>
       <div class="kpi key"><div class="v">Rs30.56</div><div class="l">Cost per conversation</div></div>
-      <div class="kpi key"><div class="v">Rs233</div><div class="l">CPM (cost per 1,000 impressions)</div></div>
       <div class="kpi"><div class="v">Rs886</div><div class="l">Total ad spend</div></div>
       <div class="kpi"><div class="v">3,800</div><div class="l">Impressions</div></div>
       <div class="kpi"><div class="v">2,302</div><div class="l">People reached</div></div>
+      <div class="kpi"><div class="v">Rs233</div><div class="l">CPM (cost per 1,000 impressions)</div></div>
     </div>
 
     <div class="section">
-      <div class="sub"><h2>The impact</h2><p>How this campaign compares with everything else on the ad account in the same period.</p></div>
+      <div class="sub"><h2>The highlights</h2></div>
       <div class="cards">
-        <div class="card"><div class="n">#1</div><h3>lowest CPM on the account</h3><p>Rs233 per 1,000 impressions. The other four ads ranged from Rs301 to Rs1,759.</p></div>
-        <div class="card"><div class="n">27×</div><h3>cheaper per conversation</h3><p>Rs30.56 per conversation, compared with Rs813.10 on the account's separate traffic ad.</p></div>
-        <div class="card"><div class="n">28%</div><h3>of all conversations</h3><p>Brought in 29 of the account's 102 Messenger conversations using under 5% of total ad spend.</p></div>
+        <div class="card"><div class="n">Rs233</div><h3>CPM</h3><p>Each 1,000 impressions cost about Rs233, which kept reach affordable on a small budget.</p></div>
+        <div class="card"><div class="n">32.7</div><h3>conversations per Rs1,000</h3><p>For every Rs1,000 spent, the campaign started almost 33 conversations with the business.</p></div>
+        <div class="card"><div class="n">2 / 3</div><h3>above-average rankings</h3><p>Meta rated the ad above average for quality and engagement rate, and average for conversion rate.</p></div>
       </div>
     </div>
 
@@ -134,24 +122,24 @@ td small{color:var(--muted)}
       <div class="sub"><h2>Challenge → Approach → Result</h2></div>
       <div class="cards">
         <div class="card"><span class="k">The challenge</span>
-          <h3>Get conversations on a small budget</h3>
-          <p>Daiichi Technologies wanted more people to message the business directly, while keeping spend under Rs900 for the flight.</p>
+          <h3>Keep the conversations coming</h3>
+          <p>Daiichi Technologies wanted a fresh push of Messenger conversations while keeping spend under Rs1,000.</p>
         </div>
         <div class="card"><span class="k">The approach</span>
-          <h3>A short, low-cost Messenger push</h3>
+          <h3>Low-budget follow-up push</h3>
           <ul>
             <li>Promoted a Facebook page post with Messenger as the destination</li>
             <li>Optimised for conversations with Meta's highest-volume bid strategy</li>
-            <li>Ran a compact three-day flight</li>
-            <li>Kept frequency at about 1.65 views per person</li>
+            <li>Kept spend under Rs900 for a short, controlled flight</li>
+            <li>Held frequency at about 1.7 views per person</li>
           </ul>
         </div>
         <div class="card"><span class="k">The result</span>
-          <h3>Cheapest reach, efficient leads</h3>
+          <h3>Efficient reach, steady conversations</h3>
           <ul>
             <li>29 conversations for Rs886.12</li>
             <li>Rs30.56 per conversation</li>
-            <li>Lowest CPM on the account (Rs233)</li>
+            <li>CPM of about Rs233</li>
             <li>Above average on quality and engagement</li>
           </ul>
         </div>
@@ -159,14 +147,13 @@ td small{color:var(--muted)}
     </div>
 
     <div class="section">
-      <div class="sub"><h2>Cost per 1,000 impressions (CPM)</h2><p>All five ads on the account. Shorter bars mean cheaper delivery.</p></div>
-      <div class="chart">
-        <div class="bar"><div class="name">This campaign<small>Oct 30 – Nov 1</small></div><div class="track"><div class="fill win" style="width:13.3%"></div></div><div class="val">Rs233</div></div>
-        <div class="bar"><div class="name">Messaging ad<small>Oct 18 – 22</small></div><div class="track"><div class="fill" style="width:17.1%"></div></div><div class="val">Rs301</div></div>
-        <div class="bar"><div class="name">Page promotion, round 1<small>Oct 6 – 10</small></div><div class="track"><div class="fill" style="width:58%"></div></div><div class="val">Rs1,020</div></div>
-        <div class="bar"><div class="name">Page promotion, round 2<small>Nov 4 – 11</small></div><div class="track"><div class="fill" style="width:77.7%"></div></div><div class="val">Rs1,367</div></div>
-        <div class="bar"><div class="name">Traffic ad<small>Oct 31 – Nov 7</small></div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">Rs1,759</div></div>
-        <p class="note">Worked out from Meta Ads Manager figures: amount spent ÷ impressions × 1,000.</p>
+      <div class="sub"><h2>Campaign funnel</h2><p>From ads shown to conversations started in Messenger.</p></div>
+      <div class="funnel">
+        <div class="stage" style="width:100%"><div class="v">3,800</div><div class="l">Impressions: times the ad was shown</div></div>
+        <div class="arrow-note">▼ shown about 1.7 times per person</div>
+        <div class="stage" style="width:72%"><div class="v">2,302</div><div class="l">People reached</div></div>
+        <div class="arrow-note">▼ 1.3% of people reached started a chat</div>
+        <div class="stage end" style="width:44%"><div class="v">29</div><div class="l">Messenger conversations</div></div>
       </div>
     </div>
 
@@ -180,36 +167,18 @@ td small{color:var(--muted)}
     </div>
 
     <div class="section">
-      <div class="sub"><h2>Full account report</h2><p>All five ads on the Daiichi Technologies account, Oct 6 – Nov 11, 2026. Total spend Rs18,977.63 · 20,643 impressions · 1,357 page follows · 102 Messenger conversations.</p></div>
-      <div class="tablewrap" tabindex="0" aria-label="Full account report, scrolls sideways">
-        <table>
-          <thead><tr>
-            <th>Ad</th><th>Goal</th><th class="num">Results</th><th class="num">Cost / result</th><th class="num">Spent</th><th class="num">Impressions</th><th class="num">Reach</th><th class="num">CPM</th><th>Quality</th>
-          </tr></thead>
-          <tbody>
-            <tr class="win"><td><b>Messaging ad (this case study)</b><br><small>Oct 30 – Nov 1</small></td><td>Conversations</td><td class="num"><b>29</b></td><td class="num"><b>Rs30.56</b></td><td class="num">Rs886.12</td><td class="num">3,800</td><td class="num">2,302</td><td class="num"><b>Rs233</b></td><td><span class="q g">Above avg</span></td></tr>
-            <tr><td>Messaging ad<br><small>Oct 18 – 22</small></td><td>Conversations</td><td class="num">64</td><td class="num">Rs23.99</td><td class="num">Rs1,535.36</td><td class="num">5,106</td><td class="num">2,556</td><td class="num">Rs301</td><td><span class="q g">Above avg</span></td></tr>
-            <tr><td>Promotion Traffic Ad<br><small>Oct 31 – Nov 7</small></td><td>Conversations</td><td class="num">9</td><td class="num">Rs813.10</td><td class="num">Rs7,317.94</td><td class="num">4,161</td><td class="num">3,384</td><td class="num">Rs1,759</td><td><span class="q">Not rated</span></td></tr>
-            <tr><td>Page promotion, round 2<br><small>Nov 4 – 11 (active)</small></td><td>Page follows</td><td class="num">893</td><td class="num">Rs6.66</td><td class="num">Rs5,949.78</td><td class="num">4,352</td><td class="num">2,486</td><td class="num">Rs1,367</td><td><span class="q">Not rated yet</span></td></tr>
-            <tr><td>Page promotion, round 1<br><small>Oct 6 – 10</small></td><td>Page follows</td><td class="num">464</td><td class="num">Rs7.09</td><td class="num">Rs3,288.43</td><td class="num">3,224</td><td class="num">2,120</td><td class="num">Rs1,020</td><td><span class="q b">Below avg</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">Source: Meta Ads Manager, 7-day click attribution. Reach is per ad and not de-duplicated across ads.</p>
-    </div>
-
-    <div class="section">
       <div class="sub"><h2>Key takeaways</h2></div>
       <div class="learn">
-        <div><h3>Quality and low cost go together</h3><p>Above-average quality and engagement rankings went with the lowest CPM on the account.</p></div>
-        <div><h3>Messenger beats traffic</h3><p>Sending people straight to Messenger brought in conversations at about 1/27th of the traffic ad's cost.</p></div>
-        <div><h3>Next lever: conversion</h3><p>Conversion rate ranked average, so the next test is a sharper offer and a quick first reply to turn more viewers into chats.</p></div>
+        <div><h3>Small budgets can still deliver</h3><p>Under Rs900 produced 29 direct conversations with the business.</p></div>
+        <div><h3>Strong creative lowers CPM</h3><p>Above-average quality and engagement rankings went with a low cost per 1,000 impressions.</p></div>
+        <div><h3>Next step: the chat itself</h3><p>Conversion rate was rated average, so the next test is a sharper call to action or opening message.</p></div>
       </div>
+      <p class="note">Source: Meta Ads Manager, 7-day click attribution. Rates and CPM worked out from the reported figures.</p>
     </div>
 
     <div class="cta">
       <h2>Want results like this for your brand?</h2>
-      <p>I plan, launch and optimise Meta ad campaigns that bring in conversations, followers and leads.</p>
+      <p>I plan, launch and optimise Meta ad campaigns that turn reach into real conversations with your business.</p>
       <a class="btn" href="https://wa.me/923040695800?text=Hi%20Naeem%2C%20I%20saw%20your%20case%20study%20and%20want%20to%20discuss%20Meta%20Ads." target="_blank" rel="noopener">Let's talk on WhatsApp</a>
     </div>
 
