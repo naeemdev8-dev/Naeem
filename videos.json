@@ -72,5 +72,12 @@
     "badge": "",
     "title": "Thumbnail for video",
     "description": ""
+  },
+  {
+    "file": "samples/sample-1794035091003.mp4",
+    "badge": "",
+    "title": "Daiichi Marketing affiliated with Swiss City",
+    "description": "",
+    "poster": "samples/sample-1794035091003.jpg"
   }
 ]
