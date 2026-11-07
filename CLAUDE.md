@@ -1,6 +1,6 @@
 # Portfolio site SOPs
 
-Single-page portfolio for Naeem Ashraf: `index.html` plus media in `videos/` and `samples/`, and the owner's photo in `images/`. The video grid is built from `videos.json`, which the owner manages through `admin.html`. Hosted on GitHub Pages from `main` at https://naeemdev8-dev.github.io/Naeem/. The repo is public.
+Single-page portfolio for Naeem Ashraf: `index.html` plus media in `videos/` and `samples/`, and the owner's photo in `images/`. The video grid is built from `videos.json`, which the owner manages through `admin.html`. Meta Ads case studies are separate pages (`case-study-<n>.html`) linked from the Case Studies section of `index.html`. Their numbers come from the owner's Ads Manager reports; never change or add figures without the owner. Hosted on GitHub Pages from `main` at https://naeemdev8-dev.github.io/Naeem/. The repo is public.
 
 Follow these on every update.
 
