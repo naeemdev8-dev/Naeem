@@ -79,6 +79,12 @@ td small{color:var(--muted)}
 .cta p{color:var(--on-accent);max-width:560px;margin:0 auto 22px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;background:var(--on-accent);color:var(--text)}
 .btn:hover{filter:brightness(1.2)}
+.pager{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));margin-top:24px}
+.pager a{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--panel);border:1.5px solid var(--line);border-radius:16px;padding:20px 24px;text-decoration:none}
+.pager a:hover{border-color:var(--accent)}
+.pager small{display:block;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.pager b{font-family:"Space Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.3}
+.pager .arrow{color:var(--accent);font-weight:700;flex:none}
 @media(max-width:640px){.bar{grid-template-columns:1fr 56px}.bar .name{grid-column:1/-1}.wrap{padding:0 16px}main{padding-top:40px}}
 </style>
 </head>
@@ -203,6 +209,10 @@ td small{color:var(--muted)}
       <p>I plan, launch and optimise Meta ad campaigns that bring in conversations, followers and leads.</p>
       <a class="btn" href="https://wa.me/923040695800?text=Hi%20Naeem%2C%20I%20saw%20your%20case%20study%20and%20want%20to%20discuss%20Meta%20Ads." target="_blank" rel="noopener">Let's talk on WhatsApp</a>
     </div>
+
+    <nav class="pager" aria-label="More case studies">
+      <a href="case-study-2.html"><div><small>Next case study</small><b>Lowest CPM on the account: 29 conversations at Rs30.56</b></div><span class="arrow">→</span></a>
+    </nav>
 
   </div>
 </main>
